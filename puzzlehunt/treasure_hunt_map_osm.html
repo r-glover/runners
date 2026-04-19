@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e6f148c7e3ab32c70482de5261fca3f8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e6f148c7e3ab32c70482de5261fca3f8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e6f148c7e3ab32c70482de5261fca3f8 = L.map(
+                "map_e6f148c7e3ab32c70482de5261fca3f8",
+                {
+                    center: [51.04347062935857, -114.06059514553367],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+  "zoomSnap": 0.25,
+  "zoomDelta": 0.25,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+
+            
+
+        
+    
+            var tile_layer_c6e347d69de131872cf81f42018cb2aa = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "My Folium Map",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c6e347d69de131872cf81f42018cb2aa.addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+        
+    
+            map_e6f148c7e3ab32c70482de5261fca3f8.fitBounds(
+                [[51.04, -114.098], [51.06, -114.03]],
+                {}
+            );
+        
+    
+            var marker_5d20cef2cfa7fa1fde246cde7a6ff789 = L.marker(
+                [51.0449261473952, -114.07029264316],
+                {
+  "radius": 10,
+  "color": "#FFD700",
+  "fill": true,
+  "fillColor": "#FF4500",
+  "fillOpacity": 0.8,
+}
+            ).addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+        
+    
+        var popup_fd687f5cdd62b6a6f9d8d6be0559e78f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abf12ff87e6e563eef357743c184b026 = $(`<div id="html_abf12ff87e6e563eef357743c184b026" style="width: 100.0%; height: 100.0%;">Clue 1</div>`)[0];
+                popup_fd687f5cdd62b6a6f9d8d6be0559e78f.setContent(html_abf12ff87e6e563eef357743c184b026);
+            
+        
+
+        marker_5d20cef2cfa7fa1fde246cde7a6ff789.bindPopup(popup_fd687f5cdd62b6a6f9d8d6be0559e78f)
+        ;
+
+        
+    
+    
+            marker_5d20cef2cfa7fa1fde246cde7a6ff789.bindTooltip(
+                `<div>
+                     Click for Clue
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0406e2177fc87d010499a2b1e101b9ce = L.marker(
+                [51.0404854066021, -114.068505489689],
+                {
+  "radius": 10,
+  "color": "#FFD700",
+  "fill": true,
+  "fillColor": "#FF4500",
+  "fillOpacity": 0.8,
+}
+            ).addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+        
+    
+        var popup_031449f827ec2ef254eb2c97edf85acd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_38a32ab833ac05fd05964578eb2ad350 = $(`<div id="html_38a32ab833ac05fd05964578eb2ad350" style="width: 100.0%; height: 100.0%;">Clue 2</div>`)[0];
+                popup_031449f827ec2ef254eb2c97edf85acd.setContent(html_38a32ab833ac05fd05964578eb2ad350);
+            
+        
+
+        marker_0406e2177fc87d010499a2b1e101b9ce.bindPopup(popup_031449f827ec2ef254eb2c97edf85acd)
+        ;
+
+        
+    
+    
+            marker_0406e2177fc87d010499a2b1e101b9ce.bindTooltip(
+                `<div>
+                     Click for Clue
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_53b496f8af7bc35738bbff3d22a1f366 = L.marker(
+                [51.0406102324606, -114.071380570554],
+                {
+  "radius": 10,
+  "color": "#FFD700",
+  "fill": true,
+  "fillColor": "#FF4500",
+  "fillOpacity": 0.8,
+}
+            ).addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+        
+    
+        var popup_e93c2d6a15b0e86a9a1f7f4bf7c5324a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82fddf9d87255eb09c76cdcd63bb1ffc = $(`<div id="html_82fddf9d87255eb09c76cdcd63bb1ffc" style="width: 100.0%; height: 100.0%;">Clue 3</div>`)[0];
+                popup_e93c2d6a15b0e86a9a1f7f4bf7c5324a.setContent(html_82fddf9d87255eb09c76cdcd63bb1ffc);
+            
+        
+
+        marker_53b496f8af7bc35738bbff3d22a1f366.bindPopup(popup_e93c2d6a15b0e86a9a1f7f4bf7c5324a)
+        ;
+
+        
+    
+    
+            marker_53b496f8af7bc35738bbff3d22a1f366.bindTooltip(
+                `<div>
+                     Click for Clue
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5d448d1db066e0d864f4370e846cae44 = L.marker(
+                [51.0399261221713, -114.0711059679419],
+                {
+  "radius": 10,
+  "color": "#FFD700",
+  "fill": true,
+  "fillColor": "#FF4500",
+  "fillOpacity": 0.8,
+}
+            ).addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+        
+    
+        var popup_51fc0a750dd577306edb7cef7e7a6653 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_69bf8a419b417117d4f0fcc609ba9b33 = $(`<div id="html_69bf8a419b417117d4f0fcc609ba9b33" style="width: 100.0%; height: 100.0%;">Clue 4</div>`)[0];
+                popup_51fc0a750dd577306edb7cef7e7a6653.setContent(html_69bf8a419b417117d4f0fcc609ba9b33);
+            
+        
+
+        marker_5d448d1db066e0d864f4370e846cae44.bindPopup(popup_51fc0a750dd577306edb7cef7e7a6653)
+        ;
+
+        
+    
+    
+            marker_5d448d1db066e0d864f4370e846cae44.bindTooltip(
+                `<div>
+                     Click for Clue
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f33db333e90fbab8d296e3010a9c7866 = L.marker(
+                [51.0440759042401, -114.043353001713],
+                {
+  "radius": 10,
+  "color": "#FFD700",
+  "fill": true,
+  "fillColor": "#FF4500",
+  "fillOpacity": 0.8,
+}
+            ).addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+        
+    
+        var popup_0e5588e947cc3a8132d1b9e00b08e425 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2be09764314faf20146a81e7ad14f812 = $(`<div id="html_2be09764314faf20146a81e7ad14f812" style="width: 100.0%; height: 100.0%;">Clue 5</div>`)[0];
+                popup_0e5588e947cc3a8132d1b9e00b08e425.setContent(html_2be09764314faf20146a81e7ad14f812);
+            
+        
+
+        marker_f33db333e90fbab8d296e3010a9c7866.bindPopup(popup_0e5588e947cc3a8132d1b9e00b08e425)
+        ;
+
+        
+    
+    
+            marker_f33db333e90fbab8d296e3010a9c7866.bindTooltip(
+                `<div>
+                     Click for Clue
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_31a8b136c9da8b9dda9caeb85d28957b = L.marker(
+                [51.04506014387104, -114.05091279810998],
+                {
+  "radius": 10,
+  "color": "#FFD700",
+  "fill": true,
+  "fillColor": "#FF4500",
+  "fillOpacity": 0.8,
+}
+            ).addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+        
+    
+        var popup_435f9a511ddeb7b5ba56af326de7a54a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_318c40c7d26ead4d4184f65dca75d02e = $(`<div id="html_318c40c7d26ead4d4184f65dca75d02e" style="width: 100.0%; height: 100.0%;">Clue 6</div>`)[0];
+                popup_435f9a511ddeb7b5ba56af326de7a54a.setContent(html_318c40c7d26ead4d4184f65dca75d02e);
+            
+        
+
+        marker_31a8b136c9da8b9dda9caeb85d28957b.bindPopup(popup_435f9a511ddeb7b5ba56af326de7a54a)
+        ;
+
+        
+    
+    
+            marker_31a8b136c9da8b9dda9caeb85d28957b.bindTooltip(
+                `<div>
+                     Click for Clue
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7b0449ad4e2387b698694b3625484d87 = L.marker(
+                [51.0454114421902, -114.057244682604],
+                {
+  "radius": 10,
+  "color": "#FFD700",
+  "fill": true,
+  "fillColor": "#FF4500",
+  "fillOpacity": 0.8,
+}
+            ).addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+        
+    
+        var popup_6d4223441e1ee86dc2273ea5db601ac4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4852c4fae909752670f119ffe52fb7e1 = $(`<div id="html_4852c4fae909752670f119ffe52fb7e1" style="width: 100.0%; height: 100.0%;">Clue 7</div>`)[0];
+                popup_6d4223441e1ee86dc2273ea5db601ac4.setContent(html_4852c4fae909752670f119ffe52fb7e1);
+            
+        
+
+        marker_7b0449ad4e2387b698694b3625484d87.bindPopup(popup_6d4223441e1ee86dc2273ea5db601ac4)
+        ;
+
+        
+    
+    
+            marker_7b0449ad4e2387b698694b3625484d87.bindTooltip(
+                `<div>
+                     Click for Clue
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d388e2d7f0d9538ac99ec46950a3d97a = L.marker(
+                [51.04294560527918, -114.04131272146472],
+                {
+  "radius": 10,
+  "color": "#FFD700",
+  "fill": true,
+  "fillColor": "#FF4500",
+  "fillOpacity": 0.8,
+}
+            ).addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+        
+    
+        var popup_5ff30dc7add13e8bb868a3641e50f154 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_367fb70f8042c8dcfbe4d2c8b5614669 = $(`<div id="html_367fb70f8042c8dcfbe4d2c8b5614669" style="width: 100.0%; height: 100.0%;">Clue 8</div>`)[0];
+                popup_5ff30dc7add13e8bb868a3641e50f154.setContent(html_367fb70f8042c8dcfbe4d2c8b5614669);
+            
+        
+
+        marker_d388e2d7f0d9538ac99ec46950a3d97a.bindPopup(popup_5ff30dc7add13e8bb868a3641e50f154)
+        ;
+
+        
+    
+    
+            marker_d388e2d7f0d9538ac99ec46950a3d97a.bindTooltip(
+                `<div>
+                     Click for Clue
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5d10c38814451fa13ded95ec3f0279c8 = L.marker(
+                [51.0460290635732, -114.064390400224],
+                {
+  "radius": 10,
+  "color": "#FFD700",
+  "fill": true,
+  "fillColor": "#FF4500",
+  "fillOpacity": 0.8,
+}
+            ).addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+        
+    
+        var popup_c517f2818c49b8bde8b8788e411a0a58 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6cf228c3eb8923e909e329d90f4bb617 = $(`<div id="html_6cf228c3eb8923e909e329d90f4bb617" style="width: 100.0%; height: 100.0%;">Clue 9</div>`)[0];
+                popup_c517f2818c49b8bde8b8788e411a0a58.setContent(html_6cf228c3eb8923e909e329d90f4bb617);
+            
+        
+
+        marker_5d10c38814451fa13ded95ec3f0279c8.bindPopup(popup_c517f2818c49b8bde8b8788e411a0a58)
+        ;
+
+        
+    
+    
+            marker_5d10c38814451fa13ded95ec3f0279c8.bindTooltip(
+                `<div>
+                     Click for Clue
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2bd33b3d30e9aba09d730954d6351770 = L.marker(
+                [51.0452362258028, -114.067453179876],
+                {
+  "radius": 10,
+  "color": "#FFD700",
+  "fill": true,
+  "fillColor": "#FF4500",
+  "fillOpacity": 0.8,
+}
+            ).addTo(map_e6f148c7e3ab32c70482de5261fca3f8);
+        
+    
+        var popup_4a9c885acd1527ad542194e66fbeb62e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7f361e27255c910450bc8ca4d08be8ef = $(`<div id="html_7f361e27255c910450bc8ca4d08be8ef" style="width: 100.0%; height: 100.0%;">Clue 10</div>`)[0];
+                popup_4a9c885acd1527ad542194e66fbeb62e.setContent(html_7f361e27255c910450bc8ca4d08be8ef);
+            
+        
+
+        marker_2bd33b3d30e9aba09d730954d6351770.bindPopup(popup_4a9c885acd1527ad542194e66fbeb62e)
+        ;
+
+        
+    
+    
+            marker_2bd33b3d30e9aba09d730954d6351770.bindTooltip(
+                `<div>
+                     Click for Clue
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
