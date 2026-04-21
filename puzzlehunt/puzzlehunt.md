@@ -62,15 +62,43 @@
     <div class="container">
         <h1>Aid Station #2</h1>
         
-        <div class="info-box">
-            <span class="info-label">Location</span>
-            Trailhead marker of the Shiny Slope Trail.
+
+        <div class="Location">
+                 <div class="info-box">
+            1. The Climber
+I twist and I turn without any feet,
+Searching for sunlight, I make life sweet.
+I might bear a grape or a morning's bright bloom,
+Clinging to trellises, I need my room.
+        </div>
+<p>
+_ _ _ _
+</p>
+
+        <div class="Location">
+                 <div class="info-box">
+2. The Lifter
+I live in a shaft, but I am not a tool,
+I follow the "Going Up?" golden rule.
+I’ll take you to ten or I'll take you to one,
+Without my steel cables, the stairs are no fun.
         </div>
 
-        <p>Head north across the stream. Curl around the first building you see, go through the sunny hill, and head west for 400m. When you see some flowers, head north. A hundred meters later a meadow will appear on the left.</p>
 
-        <div class="instructions">
-            <p>You proceed to aid station #2. Once you get there you sit in the muskoka chairs, do some foot care, and look around. Your crew isn’t here to help you, so you’ll have to get help some other way. Maybe some help will come, if not, you’ll have to look around for some yourself.</p>
+<p>
+_ _ _ _ _ _ _ _
+</p>
+
+        <div class="Location">
+                 <div class="info-box">
+3. The Gathering
+I might be for books, or for dancing at night,
+A group with a mission, or members-only sight.
+In a deck, I’m a suit that looks like a leaf,
+Join me for rhythm, or join for relief.
+</div>
+<p>_ _ _ _
+</p>
         </div>
     </div>
 </body>
