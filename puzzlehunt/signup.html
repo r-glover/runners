@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burrito League Fall Classic | Registration</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 450px;
+            width: 100%;
+        }
+        h2 {
+            color: #2d5a27;
+            text-align: center;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        p.subtitle {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        /* The Clue Styling */
+        .clue-label span {
+			font-family: Comic Sans MS;
+            color: #8F82A1;  /*Different color for 'club' */
+			font-size: 1.1em;
+            font-weight: 900;
+        }
+        button {
+            width: 100%;
+            background-color: #2d5a27;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #1e3d1a;
+        }
+        .footer-text {
+            font-size: 0.7em;
+            text-align: center;
+            margin-top: 20px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Burrito League Fall Classic | Registration</h2>
+    <p class="subtitle">Enter your details to join the peak challenge.</p>
+    
+    <form action="https://r-glover.github.io/runners/puzzlehunt/puzzlehunt.html" method="GET" >
+        <div class="form-group">
+            <label for="name">Runner Full Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+            <label for="distance">T-shirt size</label>
+            <select id="distance" name="distance">
+                <option value="1">xxxs</option>
+                <option value="2">xxs</option>
+                <option value="3">xxL</option>
+                <option value="4">xxxL</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="distance">Select Distance</label>
+            <select id="distance" name="distance">
+                <option value="42">42km - The meaning of life</option>
+                <option value="67">67km - Kid's Race</option>
+                <option value="69">69km - The Nice Loop</option>
+                <option value="420">420km - The Blazing Fast Race</option>
+            </select>
+        </div>
+
+ 
+		<div class="form-group">
+			<label for="bear">Bear Encounter Strategy</label>
+			<select id="bear" name="bear">
+				<option value="play-dead">Play dead and hope for the best</option>
+				<option value="t-pose">Assert dominance via aggressive T-posing</option>
+				<option value="negotiate">Reason with the bear using logic and granola</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label for="toenails">Expected Toenail Retention (0-10):</label>
+			<input type="range" id="toenails" name="toenails" min="0" max="10" value="10">
+			<small style="display:block; text-align:center; color:#888;">Most runners finish with 3 or fewer.</small>
+		</div>
+
+		<div class="form-group">
+			<label for="secret">Preferred Post-Race <span class="clue-text">club</span> Sandwich?</label>
+			<input type="text" id="secret" name="secret" placeholder="Turkey, Ham, or Clues?">
+		</div>
+		
+		<div class="form-group">
+			<p><strong>Which of these have you hallucinated during a long run?</strong></p>
+			
+			<input type="checkbox" id="yeti" name="hallucinations" value="yeti">
+			<label for="yeti">A very polite Yeti</label><br>
+
+			<input type="checkbox" id="pizza" name="hallucinations" value="pizza">
+			<label for="pizza">A floating pepperoni pizza</label><br>
+
+			<input type="checkbox" id="direction" name="hallucinations" value="direction">
+			<label for="direction">The general sense of direction</label>
+		</div>
+		<div class="form-group">
+            <label for="club" class="clue-label">Affiliated Running <span>CLUB</span></label>
+            <input type="text" id="club" name="club" placeholder="Leave blank if unaffiliated">
+        </div>
+		<input type="checkbox" id="trail-shoes" name="gear" value="shoes">
+		<label for="trail-shoes">"By checking this box, I acknowledge the risks of: aggressive shrubbery, judgment from passing hikers, mud in places mud should never be, and the distinct possibility of being outrun by a toddler in a hydration vest. I agree that if I am found wandering the 420km course crying and asking for a cheeseburger, the race staff may gently point me toward the finish line but are not required to carry me unless I look 'really pathetic.'"</label>
+
+
+        <button type="submit">Complete Registration</button>
+    </form>
+
+    <div class="footer-text">
+        © 2026 Calgary Burrito League Endurance Series. <br>
+        <em>Watch your step. Some paths aren't on the map.</em>
+    </div>
+</div>
+
+</body>
+</html>
