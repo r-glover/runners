@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hot Lap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     CONFIG — edit these two things and you're done.
+     ============================================================ */
+  :root { color-scheme: dark; }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: #14171A;
+    color: #F4F2EC;
+    font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    transition: background 700ms ease;
+  }
+
+  .top {
+    padding: 28px 24px 0;
+    text-align: center;
+  }
+  .crew {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: #9AA0A6;
+    margin: 0 0 4px;
+  }
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+    margin: 0 0 10px;
+    letter-spacing: 0.01em;
+  }
+  .tagline {
+    font-size: 15px;
+    color: #C7CBCF;
+    margin: 0 auto;
+    max-width: 300px;
+    line-height: 1.4;
+  }
+
+  .stage {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+
+  #startBtn {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    background: #FF6A3D;
+    color: #14171A;
+    border: none;
+    border-radius: 999px;
+    padding: 18px 44px;
+    cursor: pointer;
+    transition: transform 120ms ease, background 200ms ease;
+  }
+  #startBtn:active { transform: scale(0.96); }
+  #startBtn:hover { background: #FF7F58; }
+
+  .readout { display: none; }
+  .readout.live { display: block; }
+
+  .temp-word {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 15vw;
+    max-font-size: 76px;
+    line-height: 0.95;
+    margin: 0;
+    transition: color 400ms ease;
+  }
+  @media (min-width: 420px) { .temp-word { font-size: 76px; } }
+
+  .distance {
+    font-size: 17px;
+    color: #C7CBCF;
+    margin: 14px 0 4px;
+  }
+  .trend {
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 20px;
+  }
+
+  .bar-track {
+    width: 100%;
+    max-width: 320px;
+    height: 10px;
+    border-radius: 999px;
+    background: #262B30;
+    margin: 26px 0 8px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    width: 4%;
+    border-radius: 999px;
+    transition: width 500ms ease, background 400ms ease;
+  }
+  .bar-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+    font-size: 11px;
+    color: #6B7176;
+  }
+
+  .found {
+    display: none;
+  }
+  .found.show { display: block; }
+  .found h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 42px;
+    margin: 0 0 8px;
+  }
+  .found p { color: #C7CBCF; font-size: 15px; }
+
+  .error-box {
+    display: none;
+    max-width: 320px;
+    font-size: 14px;
+    color: #F4B0A0;
+    margin-top: 18px;
+    line-height: 1.4;
+  }
+  .error-box.show { display: block; }
+
+  footer {
+    text-align: center;
+    padding: 18px;
+    font-size: 12px;
+    color: #565B60;
+  }
+</style>
+</head>
+<body>
+
+  <div class="top">
+    <p class="crew">Burrito League Calgary</p>
+    <h1>HOT LAP</h1>
+    <p class="tagline">There's a checkpoint hidden nearby. No map — just hotter or colder. Go find it.</p>
+  </div>
+
+  <div class="stage">
+
+    <button id="startBtn">Start the Hunt</button>
+
+    <div class="readout" id="readout">
+      <p class="temp-word" id="tempWord">—</p>
+      <p class="distance" id="distanceLine">— meters away</p>
+      <p class="trend" id="trendLine">&nbsp;</p>
+
+      <div class="bar-track"><div class="bar-fill" id="barFill"></div></div>
+      <div class="bar-labels"><span>far</span><span>close</span></div>
+    </div>
+
+    <div class="found" id="foundBox">
+      <h2>🔥 Found it.</h2>
+      <p>That's the spot. Good hunting.</p>
+    </div>
+
+    <div class="error-box" id="errorBox"></div>
+  </div>
+
+  <footer>Works best outdoors, with location access allowed.</footer>
+
+<script>
+  /* ============================================================
+     CONFIG — set your secret checkpoint here.
+     Get coordinates by right-clicking the spot in Google Maps
+     and copying the lat/lng it shows you.
+     ============================================================ */
+  const TARGET = {
+    lat: 51.0447,   // <-- replace with your checkpoint latitude
+    lng: -114.0719  // <-- replace with your checkpoint longitude
+  };
+  const FOUND_RADIUS_METERS = 15; // how close counts as "found"
+
+  /* ============================================================
+     Game logic — shouldn't need to touch below this line.
+     ============================================================ */
+  const startBtn   = document.getElementById('startBtn');
+  const readout    = document.getElementById('readout');
+  const tempWord   = document.getElementById('tempWord');
+  const distanceLine = document.getElementById('distanceLine');
+  const trendLine  = document.getElementById('trendLine');
+  const barFill    = document.getElementById('barFill');
+  const foundBox   = document.getElementById('foundBox');
+  const errorBox   = document.getElementById('errorBox');
+
+  let lastDistance = null;
+  let watchId = null;
+
+  // Haversine formula: great-circle distance between two lat/lng points, in meters.
+  function distanceMeters(lat1, lon1, lat2, lon2) {
+    const R = 6371000;
+    const toRad = d => d * Math.PI / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a = Math.sin(dLat / 2) ** 2 +
+              Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+              Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  function tempFor(d) {
+    if (d < FOUND_RADIUS_METERS) return { word: 'FOUND', color: '#FF6A3D' };
+    if (d < 40)   return { word: 'SCORCHING', color: '#FF6A3D' };
+    if (d < 100)  return { word: 'HOT',       color: '#FF8F5C' };
+    if (d < 250)  return { word: 'WARM',      color: '#F2B85C' };
+    if (d < 600)  return { word: 'COOL',      color: '#7FB3D5' };
+    return             { word: 'FREEZING',    color: '#4E7FA6' };
+  }
+
+  function setBackground(color) {
+    document.body.style.background = `linear-gradient(180deg, #14171A 0%, ${color}22 140%)`;
+  }
+
+  function handlePosition(pos) {
+    const { latitude, longitude } = pos.coords;
+    const d = distanceMeters(latitude, longitude, TARGET.lat, TARGET.lng);
+
+    if (d < FOUND_RADIUS_METERS) {
+      readout.classList.remove('live');
+      foundBox.classList.add('show');
+      setBackground('#FF6A3D');
+      if (watchId !== null) navigator.geolocation.clearWatch(watchId);
+      return;
+    }
+
+    const { word, color } = tempFor(d);
+    tempWord.textContent = word;
+    tempWord.style.color = color;
+    distanceLine.textContent = `${Math.round(d)} meters away`;
+    setBackground(color);
+
+    // meter bar: closer = fuller. Scaled so ~800m = empty, 0m = full.
+    const pct = Math.max(4, Math.min(100, 100 - (d / 800) * 100));
+    barFill.style.width = pct + '%';
+    barFill.style.background = color;
+
+    if (lastDistance !== null) {
+      if (d < lastDistance - 2) {
+        trendLine.textContent = '↑ getting warmer';
+        trendLine.style.color = '#8FD19E';
+      } else if (d > lastDistance + 2) {
+        trendLine.textContent = '↓ getting colder';
+        trendLine.style.color = '#F2A0A0';
+      } else {
+        trendLine.textContent = 'holding steady';
+        trendLine.style.color = '#C7CBCF';
+      }
+    }
+    lastDistance = d;
+  }
+
+  function handleError(err) {
+    errorBox.classList.add('show');
+    if (err.code === err.PERMISSION_DENIED) {
+      errorBox.textContent = "Location access was denied. You'll need to allow it in your browser settings to play.";
+    } else {
+      errorBox.textContent = "Couldn't get a location fix. Try moving somewhere with a clearer sky view.";
+    }
+  }
+
+  startBtn.addEventListener('click', () => {
+    if (!('geolocation' in navigator)) {
+      errorBox.classList.add('show');
+      errorBox.textContent = "This browser doesn't support location. Try a different phone or browser.";
+      return;
+    }
+    startBtn.style.display = 'none';
+    readout.classList.add('live');
+    errorBox.classList.remove('show');
+
+    watchId = navigator.geolocation.watchPosition(handlePosition, handleError, {
+      enableHighAccuracy: true,
+      maximumAge: 2000,
+      timeout: 15000
+    });
+  });
+</script>
+</body>
+</html>
